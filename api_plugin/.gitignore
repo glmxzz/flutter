@@ -6,3 +6,6 @@
 pubspec.lock
 
 build/
+.idea
+api_plugin_android.iml
+api_plugin.iml

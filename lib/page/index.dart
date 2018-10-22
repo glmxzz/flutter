@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:api_plugin/api_manager.dart';
+import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -47,17 +47,23 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return new Container(
-        color: Color(0xFFFBCF33),
-        child: new Column(children: <Widget>[
+    return new Scaffold(
+
+
+        body: new Column(children: <Widget>[
           new Padding(padding: new EdgeInsets.only(top: 31)),
           new Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                new IconButton(icon: new Icon(Icons.list), onPressed: (){
-                  ApiManager().get("/update/v1", null);
-                }),
-
+                new Container(
+                    padding: new EdgeInsets.all(0.0),
+                    child: new IconButton(
+                      icon: new Icon(Icons.star),
+                      color: Colors.red[500],
+                      onPressed: () {
+                        ApiManager().get("/update/v1", null);
+                      },
+                    )),
                 new Text("41", textAlign: TextAlign.left),
                 new Text("41", textAlign: TextAlign.left)
               ])
